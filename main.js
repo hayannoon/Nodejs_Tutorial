@@ -9,7 +9,7 @@ var app = http.createServer(function (request, response) {
     var pathname = url.parse(_url, true).pathname;
 
     if (pathname === '/') {
-        if (queryData.id == undefined) {
+        if (queryData.id == undefined) { //Main Page
 
             fs.readdir('./data', function (err, filelist) {
                 console.log(filelist);
@@ -46,6 +46,7 @@ var app = http.createServer(function (request, response) {
 
             })
         } else {
+            console.log(pathname)
             fs.readdir('./data', function (err, filelist) {
                 console.log(filelist);
                 var list = '<ul>';
